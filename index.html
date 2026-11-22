@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="An early Christmas present: a high-desert weekend of wolves, a sound bath and country music.">
+<meta property="og:title" content="Wolf Pack Weekend">
+<meta property="og:description" content="An early Christmas present. Turn your sound on and howl with the pack.">
+<title>Wolf Pack Weekend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+/* Layout: moonlit hero with a howling pack, "what's waiting" plank, the trail day by day, wanted-poster panels, packing list, closing note */
+:root {
+  --bg: #F1E4C8; --paper: #FAF1DC; --ink: #2A1B10; --muted: #6E5638; --rule: #C9AE80;
+  --rust: #A3391B; --turq: #1F6E69; --brass: #9A6A12; --sage: #4E6B3A; --violet: #5E4588; --holly: #8E1F1F;
+  --f-wild: 'Rye', 'Georgia', serif;
+  --f-slab: 'Zilla Slab', 'Rockwell', 'Georgia', serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17110D; --paper: #221913; --ink: #EEDFC2; --muted: #B39A76; --rule: #4A3826;
+    --rust: #E2774E; --turq: #5DBBB3; --brass: #E0B35A; --sage: #9DBE83; --violet: #B59CE6; --holly: #E86A6A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17110D; --paper: #221913; --ink: #EEDFC2; --muted: #B39A76; --rule: #4A3826;
+  --rust: #E2774E; --turq: #5DBBB3; --brass: #E0B35A; --sage: #9DBE83; --violet: #B59CE6; --holly: #E86A6A;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-slab); font-size: 16px; line-height: 1.55; }
+h1, h2, h3, p, ul, dl, dd { margin: 0; }
+a { color: var(--rust); }
+.gutter { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.inner { max-width: 940px; margin: 0 auto; }
+
+/* HERO: a fixed night scene, same in both themes */
+.hero { position: relative; color: #F3E6C8; overflow: hidden;
+  background:
+    radial-gradient(1.5px 1.5px at 8% 14%, #fff8 50%, transparent 51%),
+    radial-gradient(1px 1px at 18% 32%, #fff9 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 27% 9%, #fffa 50%, transparent 51%),
+    radial-gradient(1px 1px at 39% 24%, #fff8 50%, transparent 51%),
+    radial-gradient(2px 2px at 52% 12%, #fffb 50%, transparent 51%),
+    radial-gradient(1px 1px at 61% 30%, #fff8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 72% 7%, #fff9 50%, transparent 51%),
+    radial-gradient(1px 1px at 84% 21%, #fff8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 93% 11%, #fffa 50%, transparent 51%),
+    radial-gradient(1px 1px at 47% 40%, #fff6 50%, transparent 51%),
+    linear-gradient(180deg, #0C0A17 0%, #1E1630 45%, #4A2B33 82%, #7A4430 100%);
+}
+.hero .inner { position: relative; z-index: 1; padding-top: 48px; text-align: center; }
+.eyebrow { font: 600 12px/1.2 var(--f-slab); letter-spacing: .3em; text-transform: uppercase; color: #E6B95C; }
+.eyebrow::before, .eyebrow::after { content: "✦"; margin: 0 .8em; color: #E6B95C; }
+.hero h1 { font-family: var(--f-wild); font-weight: 400; font-size: clamp(46px, 10vw, 104px); line-height: .95; letter-spacing: .02em;
+  margin: 16px 0 14px; color: #F6E7C4; text-shadow: 0 3px 0 #6B2A14, 0 0 28px rgba(243,214,150,.25); text-wrap: balance; }
+.hero-sub { max-width: 54ch; margin: 0 auto 22px; color: rgba(243,230,200,.86); font-size: 17px; }
+.howl { font: 700 13px/1 var(--f-slab); letter-spacing: .18em; text-transform: uppercase; color: #2A1B10; cursor: pointer;
+  background: linear-gradient(#F3D58A, #C9952F); border: 2px solid #2A1B10; border-radius: 3px; padding: 11px 18px;
+  box-shadow: 0 0 0 2px #E6B95C, 0 4px 0 #5A3412; display: inline-flex; align-items: center; gap: 10px; }
+.howl:hover { filter: brightness(1.06); }
+.howl:active { transform: translateY(2px); box-shadow: 0 0 0 2px #E6B95C, 0 2px 0 #5A3412; }
+.howl:focus-visible { outline: 3px solid #F6E7C4; outline-offset: 4px; }
+.howl svg { width: 18px; height: 18px; }
+.howl-note { display: block; margin-top: 10px; font-size: 12.5px; color: rgba(243,230,200,.6); min-height: 1.2em; }
+.scene { display: block; width: 100%; height: clamp(150px, 24vw, 250px); margin-top: 18px; }
+.moon-glow { transition: opacity .6s ease; }
+.hero.howling .moon-glow { opacity: 1; }
+
+.board { background: #140E16; padding-block: 18px 26px; }
+.board-title { font: 700 11.5px/1 var(--f-slab); letter-spacing: .26em; text-transform: uppercase; color: #C9A974; text-align: center; margin-bottom: 12px; }
+.status { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.stat { border: 1px solid #4B3A2A; background: #1F1712; border-radius: 3px; padding: 12px 14px; min-width: 0; color: #F3E6C8; }
+.stat .what { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #E6B95C; }
+.stat .val { font-size: 16px; font-weight: 600; margin-top: 3px; line-height: 1.3; }
+
+.section-label { font: 700 12.5px/1 var(--f-slab); letter-spacing: .26em; text-transform: uppercase; color: var(--rust);
+  display: flex; align-items: center; gap: 14px; margin: 52px 0 22px; }
+.section-label::before, .section-label::after { content: ""; flex: 1; height: 0; border-top: 3px double var(--rule); }
+.section-label span::before { content: "✦ "; } .section-label span::after { content: " ✦"; }
+.plan-intro { font-size: 16px; color: var(--muted); max-width: 66ch; margin: 0 auto 26px; text-align: center; font-style: italic; }
+
+.day { margin-bottom: 30px; }
+.day h3 { font-family: var(--f-wild); font-weight: 400; font-size: 26px; letter-spacing: .02em; padding-bottom: 8px; margin-bottom: 4px; border-bottom: 3px double var(--rule); }
+.day h3 small { font-family: var(--f-slab); font-size: 15px; font-style: italic; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+.tl { list-style: none; padding: 0; }
+.tl li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; padding: 9px 0; border-bottom: 1px dashed var(--rule); }
+.tl li:last-child { border-bottom: 0; }
+.time { font-size: 13px; font-weight: 700; color: var(--brass); font-variant-numeric: tabular-nums lining-nums; text-align: right; padding-top: 1px; }
+.ev { font-size: 15.5px; min-width: 0; }
+.ev .n { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+.tag { font-weight: 700; }
+.tag.show { color: var(--rust); } .tag.wolf { color: var(--turq); } .tag.sound { color: var(--violet); } .tag.base { color: var(--sage); }
+
+.poster { --accent: var(--rust); background: var(--paper); border: 2px solid var(--ink); border-radius: 2px; padding: 24px 26px;
+  box-shadow: inset 0 0 0 5px var(--paper), inset 0 0 0 6px var(--rule), 5px 5px 0 color-mix(in srgb, var(--ink) 18%, transparent); }
+.poster.show-p { --accent: var(--rust); } .poster.motel-p { --accent: var(--sage); } .poster.sound-p { --accent: var(--violet); } .poster.wolf-p { --accent: var(--turq); }
+.posters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.p-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.p-head > div { min-width: 0; flex: 1 1 220px; }
+.p-kicker { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.p-head h2 { font-family: var(--f-wild); font-weight: 400; font-size: clamp(26px, 4vw, 32px); line-height: 1.05; }
+.stamp { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+  border: 2px solid var(--accent); padding: 5px 9px; border-radius: 3px; transform: rotate(-4deg); white-space: nowrap; }
+.p-body { font-size: 15.5px; color: var(--ink); }
+.p-foot { font-size: 14px; color: var(--muted); border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 14px; }
+
+.pack { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; font-size: 15.5px; }
+.pack li { padding-left: 26px; position: relative; }
+.pack li::before { content: "✦"; position: absolute; left: 0; top: 0; color: var(--rust); }
+.pack small { display: block; font-size: 14px; color: var(--muted); }
+
+.letter { margin-top: 56px; text-align: center; padding: 34px 24px; background: var(--paper); border: 2px solid var(--ink);
+  box-shadow: inset 0 0 0 5px var(--paper), inset 0 0 0 6px var(--rule); }
+.letter h2 { font-family: var(--f-wild); font-weight: 400; font-size: clamp(34px, 7vw, 54px); color: var(--holly); line-height: 1; margin-bottom: 14px; }
+.letter p { font-size: 18px; max-width: 46ch; margin: 0 auto; }
+.letter .sign { margin-top: 16px; font-style: italic; color: var(--muted); }
+
+footer { background: #140E16; color: rgba(243,230,200,.66); font-size: 13.5px; padding-block: 30px; margin-top: 64px; border-top: 4px double #4B3A2A; }
+footer .inner { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; }
+footer a { color: #E6B95C; }
+
+@media (max-width: 760px) {
+  .status { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .posters, .pack { grid-template-columns: minmax(0, 1fr); }
+  .tl li { grid-template-columns: 60px minmax(0, 1fr); gap: 12px; }
+  .poster { padding: 20px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .moon-glow { transition: none; } }
+</style>
+</head>
+<body>
+<header class="hero" id="hero">
+  <div class="inner gutter">
+    <p class="eyebrow">An early Christmas present</p>
+    <h1>Wolf Pack Weekend</h1>
+    <p class="hero-sub">Pack your boots. On Friday, December 18th, we're running off to the high desert for two nights in an old Western movie town. There's a sound bath under a singing dome, a morning with real wolves, and a night of country music at Pappy &amp; Harriets.</p>
+    <button class="howl" type="button" id="howl" aria-describedby="howl-note">
+      <svg viewBox="0 0 80 100" aria-hidden="true"><use href="#wolf" fill="#2A1B10"/></svg>Howl with the pack
+    </button>
+    <span class="howl-note" id="howl-note" aria-live="polite">Turn your sound on</span>
+  </div>
+  <svg class="scene" viewBox="0 0 1200 250" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Three wolves howling at a full moon from desert rocks, with Joshua trees on the ridge">
+    <defs>
+      <symbol id="wolf" viewBox="0 0 80 100">
+        <path d="M44 100 L22 100 L12 99 L5 94 L8 90 L16 93 L21 86 L23 76 L28 64 L35 54 L43 46 L48 37 L51 27 L52 20 L50 12 L55 16 L58 8 L60 15 L65 12 L71 5 L76 1 L75 5 L70 9 L76 10 L69 14 L65 21 L63 30 L64 42 L63 54 L66 72 L66 95 L70 100 L56 100 L58 95 L57 78 L51 86 L45 88 L41 95 Z"/>
+      </symbol>
+      <symbol id="jtree" viewBox="0 0 60 100">
+        <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 100 V58 M30 72 L18 56 L14 42 M30 62 L42 48 L45 34 M18 56 L9 50 M42 48 L52 44"/>
+        </g>
+        <g fill="currentColor"><circle cx="14" cy="38" r="6"/><circle cx="45" cy="30" r="6"/><circle cx="8" cy="47" r="5"/><circle cx="53" cy="41" r="5"/><circle cx="30" cy="55" r="5"/></g>
+      </symbol>
+      <radialGradient id="glow"><stop offset="0" stop-color="#F7E2A8" stop-opacity=".55"/><stop offset="1" stop-color="#F7E2A8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <circle class="moon-glow" cx="930" cy="118" r="96" fill="url(#glow)" opacity=".55"/>
+    <circle cx="930" cy="118" r="52" fill="#F5E6BC"/>
+    <circle cx="914" cy="105" r="8" fill="#E6D3A1"/><circle cx="946" cy="132" r="11" fill="#E6D3A1"/><circle cx="942" cy="98" r="5" fill="#E6D3A1"/>
+    <path d="M0 175 L80 156 L170 165 L260 126 L340 146 L430 116 L520 140 L610 124 L700 146 L790 112 L880 134 L980 118 L1080 146 L1200 130 V250 H0 Z" fill="#2B2034"/>
+    <g color="#1E1624"><use href="#jtree" x="560" y="118" width="44" height="70"/><use href="#jtree" x="840" y="128" width="34" height="56"/></g>
+    <path d="M0 212 Q300 196 600 206 T1200 200 V250 H0 Z" fill="#140E16"/>
+    <path d="M110 212 L146 172 L190 160 L238 152 L284 165 L326 186 L352 212 Z" fill="#140E16"/>
+    <path d="M985 210 L1018 184 L1060 177 L1102 192 L1125 210 Z" fill="#140E16"/>
+    <g fill="#140E16">
+      <use href="#wolf" x="176" y="92" width="58" height="72"/>
+      <use href="#wolf" x="236" y="112" width="44" height="54"/>
+      <g transform="translate(1092 132) scale(-1 1)"><use href="#wolf" width="40" height="50"/></g>
+    </g>
+    <g color="#140E16"><use href="#jtree" x="420" y="128" width="54" height="90"/><use href="#jtree" x="1140" y="136" width="44" height="74"/><use href="#jtree" x="30" y="150" width="40" height="66"/></g>
+  </svg>
+  <div class="board">
+    <div class="inner gutter">
+      <p class="board-title">What's waiting for you</p>
+      <div class="status">
+        <div class="stat"><p class="what">Friday at sundown</p><p class="val">A sound bath inside the Integratron</p></div>
+        <div class="stat"><p class="what">Saturday morning</p><p class="val">Meet the wolves of Wolf Mountain</p></div>
+        <div class="stat"><p class="what">Saturday night</p><p class="val">Willi Carlisle at Pappy &amp; Harriets</p></div>
+        <div class="stat"><p class="what">Sunday</p><p class="val">Joshua Tree and the Saloon</p></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="gutter">
+<div class="inner">
+
+  <h2 class="section-label"><span>The Trail</span></h2>
+  <p class="plan-intro">Mid-December in the high desert means crisp, sunny days, nights near freezing, and sundown around 4:40. Everything is booked, so all you need to do is pack.</p>
+
+  <div class="day"><h3>Friday <small>Dec 18 · Sound bath at sundown</small></h3><ul class="tl">
+    <li><span class="time">12:00 pm</span><span class="ev">We hit the road east, about two and a half hours into the desert.</span></li>
+    <li><span class="time">3:00 pm</span><span class="ev">We arrive at the Integratron in Landers and wander the grounds before our session.</span></li>
+    <li><span class="time">3:30 pm</span><span class="ev"><span class="tag sound">Sound bath inside the Integratron</span><span class="n">We lie under a wooden dome while 22 quartz crystal bowls are played live. It lasts an hour, and we come out just as the sun goes down.</span></span></li>
+    <li><span class="time">4:45 pm</span><span class="ev">A quick stop in Yucca Valley to pick up treats for the wolves.</span></li>
+    <li><span class="time">5:45 pm</span><span class="ev"><span class="tag base">Check in at the Pioneertown Motel</span><span class="n">Our room for two nights, on the old Western movie set.</span></span></li>
+    <li><span class="time">6:30 pm</span><span class="ev">Dinner and live music at the Red Dog Saloon, just down Mane Street.<span class="n">Then the stars. Pioneertown is about as dark as skies get this close to LA.</span></span></li>
+  </ul></div>
+
+  <div class="day"><h3>Saturday <small>Dec 19 · Wolves and Willi</small></h3><ul class="tl">
+    <li><span class="time">8:00 am</span><span class="ev">Coffee at the motel Canteen, then breakfast on the way.</span></li>
+    <li><span class="time">9:00 am</span><span class="ev">A scenic drive north through the desert to Lucerne Valley.</span></li>
+    <li><span class="time">10:00 am</span><span class="ev"><span class="tag wolf">Wolf Mountain Sanctuary</span><span class="n">We meet each wolf, hear its story, and get some hands-on time with one of them. Wolf kisses are allowed. Paw prints on your coat are likely.</span></span></li>
+    <li><span class="time">12:45 pm</span><span class="ev">Lunch at Crossroads Cafe in Joshua Tree, then the little shops of Sun Alley and the World Famous Crochet Museum.</span></li>
+    <li><span class="time">2:30 pm</span><span class="ev">Noah Purifoy's Outdoor Desert Art Museum: 10 acres of strange and wonderful sculpture in the late afternoon light.</span></li>
+    <li><span class="time">4:15 pm</span><span class="ev">Back to the motel to warm up and watch the sun set over Mane Street.</span></li>
+    <li><span class="time">6:30 pm</span><span class="ev">BBQ dinner at Pappy &amp; Harriets.</span></li>
+    <li><span class="time">9:30 pm</span><span class="ev"><span class="tag show">Willi Carlisle, live</span><span class="n">Banjo, fiddle, accordion and story songs in the best little roadhouse in the West. Then we walk back to our room under the stars.</span></span></li>
+  </ul></div>
+
+  <div class="day"><h3>Sunday <small>Dec 20 · Into the park</small></h3><ul class="tl">
+    <li><span class="time">8:00 am</span><span class="ev">Coffee, then we say goodbye to Pioneertown.</span></li>
+    <li><span class="time">8:45 am</span><span class="ev">Into Joshua Tree National Park.</span></li>
+    <li><span class="time">9:15 am</span><span class="ev">Hidden Valley and Barker Dam: two easy walks among giant boulders. Bighorn sheep sometimes come down to the water in winter.</span></li>
+    <li><span class="time">11:00 am</span><span class="ev">Skull Rock and Cap Rock.</span></li>
+    <li><span class="time">12:15 pm</span><span class="ev"><span class="tag show">Joshua Tree Saloon</span>: burgers and the Sunday open mic on the patio<span class="n">The half-pound Mineshaft Burger is the house legend.</span></span></li>
+    <li><span class="time">2:00 pm</span><span class="ev">Home, with sand in our boots.</span></li>
+  </ul></div>
+
+  <h2 class="section-label"><span>The Main Events</span></h2>
+  <div class="posters">
+    <section class="poster sound-p">
+      <div class="p-head"><div><p class="p-kicker">Landers · Friday</p><h2>The Integratron</h2></div><span class="stamp">3:30 pm</span></div>
+      <p class="p-body">A 38-foot wooden dome built in the 1950s by George Van Tassel, who believed it could recharge the body. The acoustics are so good that a whisper carries across the room.</p>
+      <p class="p-foot">Bring a cozy blanket. There are a few steep stairs up into the dome.</p>
+    </section>
+    <section class="poster wolf-p">
+      <div class="p-head"><div><p class="p-kicker">Lucerne Valley · Saturday</p><h2>Wolf Mountain</h2></div><span class="stamp">10 am</span></div>
+      <p class="p-body">A small sanctuary that has cared for wolves since 1985. It's one of the few places where you can get close enough to touch one.</p>
+      <p class="p-foot">No hats, gloves or sunglasses around the wolves, and the guides take all the photos.</p>
+    </section>
+    <section class="poster show-p">
+      <div class="p-head"><div><p class="p-kicker">Pappy &amp; Harriets · Saturday</p><h2>Willi Carlisle</h2></div><span class="stamp">9:30 pm</span></div>
+      <p class="p-body">An Ozarks folk-country storyteller on “The Universal Bubba Tour”, with Amelia Day opening. His album <em>Peculiar, Missouri</em> is the one to queue up on the drive out.</p>
+      <p class="p-foot">Pappy's has been a desert roadhouse since 1982, and it's a short walk from our room.</p>
+    </section>
+    <section class="poster motel-p">
+      <div class="p-head"><div><p class="p-kicker">Pioneertown · Fri &amp; Sat</p><h2>Our Bunkhouse</h2></div><span class="stamp">2 nights</span></div>
+      <p class="p-body">The Pioneertown Motel sits on a Western movie set built in 1946. There are no TVs, hammocks out back, and coffee in the Canteen every morning.</p>
+      <p class="p-foot">Pappy's, the Red Dog Saloon and Mane Street are all just a short walk away.</p>
+    </section>
+  </div>
+
+  <h2 class="section-label"><span>What to Pack</span></h2>
+  <ul class="pack">
+    <li>A warm coat and layers<small>Nights drop to near freezing</small></li>
+    <li>A soft blanket<small>For the sound bath</small></li>
+    <li>Boots or comfy walking shoes<small>For the boulders and trails</small></li>
+    <li>Clothes that can get a little dirty<small>The wolves will say hello with their paws</small></li>
+    <li>Your ID<small>The Integratron checks it</small></li>
+    <li>A water bottle and sunscreen<small>Desert air is dry, even in winter</small></li>
+  </ul>
+
+  <section class="letter">
+    <h2>Merry Christmas</h2>
+    <p>One weekend in the desert, just the two of us, the moon, and a few new friends with very big paws. I can't wait to howl at the moon with you.</p>
+    <p class="sign">With all my love</p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="inner gutter">
+    <span>Dec 18–20, 2026 · Pioneertown, California</span>
+    <span><a href="https://www.integratron.com/">Integratron</a> · <a href="https://wolfmountainsanctuary.org/">Wolf Mountain</a> · <a href="https://pappyandharriets.com/">Pappy &amp; Harriets</a> · <a href="https://www.pioneertown-motel.com/">Pioneertown Motel</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var HOWL_SECONDS = 3.2;
+  var PACK = [
+    { delay: 0.0, base: 330, peak: 620, hold: 560, end: 400 },
+    { delay: 0.7, base: 400, peak: 760, hold: 700, end: 480 },
+    { delay: 1.5, base: 280, peak: 520, hold: 470, end: 330 }
+  ];
+  var ctx = null;
+  var hero = document.getElementById('hero');
+  var note = document.getElementById('howl-note');
+
+  function voice(v, t0) {
+    var osc = ctx.createOscillator();
+    var lfo = ctx.createOscillator();
+    var lfoGain = ctx.createGain();
+    var filter = ctx.createBiquadFilter();
+    var amp = ctx.createGain();
+    osc.type = 'triangle';
+    filter.type = 'lowpass';
+    filter.frequency.value = 1400;
+    lfo.frequency.value = 5.5;
+    lfoGain.gain.value = 9;
+    lfo.connect(lfoGain).connect(osc.frequency);
+    var t = t0 + v.delay;
+    osc.frequency.setValueAtTime(v.base, t);
+    osc.frequency.exponentialRampToValueAtTime(v.peak, t + 0.7);
+    osc.frequency.exponentialRampToValueAtTime(v.hold, t + 2.0);
+    osc.frequency.exponentialRampToValueAtTime(v.end, t + HOWL_SECONDS);
+    amp.gain.setValueAtTime(0.0001, t);
+    amp.gain.exponentialRampToValueAtTime(0.16, t + 0.45);
+    amp.gain.setValueAtTime(0.16, t + 2.2);
+    amp.gain.exponentialRampToValueAtTime(0.0001, t + HOWL_SECONDS);
+    osc.connect(filter).connect(amp).connect(ctx.destination);
+    osc.start(t); lfo.start(t);
+    osc.stop(t + HOWL_SECONDS + 0.05); lfo.stop(t + HOWL_SECONDS + 0.05);
+  }
+
+  document.getElementById('howl').addEventListener('click', function () {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) { note.textContent = 'Your browser can’t play the howl.'; return; }
+    try {
+      ctx = ctx || new AC();
+      if (ctx.state === 'suspended') ctx.resume();
+      var t0 = ctx.currentTime + 0.05;
+      PACK.forEach(function (v) { voice(v, t0); });
+      hero.classList.add('howling');
+      note.textContent = 'Awoooooo…';
+      setTimeout(function () { hero.classList.remove('howling'); note.textContent = 'Turn your sound on'; }, (HOWL_SECONDS + 1.6) * 1000);
+    } catch (e) {
+      note.textContent = 'Your browser can’t play the howl.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
